@@ -1,0 +1,23 @@
+//
+// General Firestore Rules.
+//
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Allow public read access to all cats.
+    match /sheep/{sheepId} {
+      allow read;
+      allow write: if isAdmin();
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+    	return isSignedIn()
+      	&& (request.auth.uid == 'xQxPqzE81eSBmLfd6HNpeVivqAJ3');
+    }
+  }
+}

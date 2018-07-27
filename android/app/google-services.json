@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "596857510694",
+    "firebase_url": "https://agri-dex.firebaseio.com",
+    "project_id": "agri-dex",
+    "storage_bucket": "agri-dex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596857510694:android:f86e90429aa3b1b7",
+        "android_client_info": {
+          "package_name": "com.nathanglover.agridex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596857510694-2r3vrrjr7jemmvji53fkt1tk78qi6o0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nathanglover.agridex",
+            "certificate_hash": "9d8437acd14471f02940eceeb1d3520fc38f9ca5"
+          }
+        },
+        {
+          "client_id": "596857510694-8n7u42ks4288vafmhfuj2gg96bmd3bdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBwFSFOuJK6g1TdrQR5O401Is0fnsbPDE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596857510694-8n7u42ks4288vafmhfuj2gg96bmd3bdb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "596857510694-ag326u7fmk0v7fjtbvqlodb021a5ckq7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nathanglover.agridex"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
