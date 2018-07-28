@@ -10,6 +10,8 @@ class SheepDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
     var fieldCaption = textTheme.title.copyWith(color: Colors.white);
+    var fieldText =
+        textTheme.body1.copyWith(color: Colors.black, fontSize: 30.0);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -40,8 +42,7 @@ class SheepDetail extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0),
                   child: Text(
                     this.sheep.eid,
-                    style: textTheme.body1
-                        .copyWith(color: Colors.black, fontSize: 30.0),
+                    style: fieldText,
                   ),
                 ),
               ),
