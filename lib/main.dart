@@ -10,10 +10,9 @@ class SheepBoxApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: new ThemeData(
-        primarySwatch: Colors.green,
-        accentColor: Colors.amberAccent,
-        fontFamily: 'Ubuntu'
-      ),
+          primarySwatch: Colors.green,
+          accentColor: Colors.amberAccent,
+          fontFamily: 'Ubuntu'),
       home: new SheepList(),
     );
   }
