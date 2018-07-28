@@ -142,12 +142,6 @@ class _SheepListState extends State<SheepList> {
               onPressed: () => _onBluetoothSetupClick(context),
               child: Icon(Icons.bluetooth, color: Colors.white),
               tooltip: 'Bluetooth Connect',
-            ),
-            new FloatingActionButton(
-              heroTag: null,
-              onPressed: (){},
-              child: Icon(Icons.scanner, color: Colors.white),
-              tooltip: 'Scan Tag',
             )
           ],
         ));

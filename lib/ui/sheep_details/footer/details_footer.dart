@@ -1,53 +1,69 @@
 import 'package:agridex/models/sheep.dart';
-import 'package:agridex/ui/sheep_details/footer/showcase_details.dart';
 import 'package:flutter/material.dart';
 
-class SheepShowcase extends StatefulWidget {
+class SheepDetail extends StatelessWidget {
   final Sheep sheep;
+  TextStyle fieldCaptionStyle;
+  TextStyle fieldTextStyle;
 
-  SheepShowcase(this.sheep);
-
-  @override
-  _SheepShowcaseState createState() => new _SheepShowcaseState();
-}
-
-class _SheepShowcaseState extends State<SheepShowcase>
-    with TickerProviderStateMixin {
-  List<Tab> _tabs;
-  List<Widget> _pages;
-  TabController _controller;
-
-  @override
-  initState() {
-    super.initState();
-    _tabs = [
-      new Tab(text: 'Details'),
-    ];
-    _pages = [
-      new DetailsShowcase(widget.sheep),
-    ];
-    _controller = new TabController(
-      length: _tabs.length,
-      vsync: this,
-    );
-  }
+  SheepDetail(this.sheep);
 
   @override
   Widget build(BuildContext context) {
-    return new Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: new Column(
-        children: [
-          new TabBar(
-            controller: _controller,
-            tabs: _tabs,
-            indicatorColor: Colors.white,
+    var textTheme = Theme.of(context).textTheme;
+    this.fieldCaptionStyle = textTheme.title.copyWith(color: Colors.white);
+    this.fieldTextStyle =
+        textTheme.body1.copyWith(color: Colors.black, fontSize: 25.0);
+
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      buildField('EID', this.sheep.eid),
+      buildField(
+          'Birth',
+          this.sheep.birth.toString() +
+              ' / ' +
+              (this.sheep.sex == 'M' ? '♂ Male' : '♀ Female')),
+      buildField('Visual Num.', this.sheep.visualNum.toString()),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(60.0, 20.0, 60.0, 20.0),
+        child: RaisedButton(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text('More Details', style: this.fieldTextStyle),
           ),
-          new SizedBox.fromSize(
-            size: const Size.fromHeight(300.0),
-            child: new TabBarView(
-              controller: _controller,
-              children: _pages,
+          onPressed: () {},
+        ),
+      )
+    ]);
+  }
+
+  Padding buildField(String caption, String text) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 5.0),
+            child: Text(caption, style: this.fieldCaptionStyle),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.elliptical(50.0, 100.0)),
+              gradient: LinearGradient(
+                begin: FractionalOffset.centerRight,
+                end: FractionalOffset.bottomLeft,
+                colors: [
+                  Colors.white,
+                  Colors.white,
+                ],
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0),
+              child: Text(
+                text,
+                style: this.fieldTextStyle,
+              ),
             ),
           ),
         ],
