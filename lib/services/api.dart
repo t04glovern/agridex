@@ -18,7 +18,8 @@ class SheepApi {
 
   static Future<SheepApi> signInWithGoogle() async {
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+    final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
     final FirebaseUser user = await _auth.signInWithGoogle(
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
@@ -42,13 +43,15 @@ class SheepApi {
     return new Sheep(
         documentId: snapshot.documentID,
         eid: data['eid'],
+        tag: data['tag'],
+        origin: data['origin'],
         sex: data['sex'],
         birth: data['birth'],
+        postBreeder: data['postBreeder'],
         visualNum: data['visualNum'],
         fleece: new List<Object>.from(data['fleece']),
         pregnancies: new List<Object>.from(data['pregnancies']),
-        weights: new List<Object>.from(data['weights'])
-        );
+        weights: new List<Object>.from(data['weights']));
   }
 
   Future<List<Sheep>> getAllSheep() async {
