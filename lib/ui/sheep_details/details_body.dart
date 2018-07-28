@@ -70,7 +70,7 @@ class SheepDetailBody extends StatelessWidget {
           padding: const EdgeInsets.only(top: 4.0),
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(100.0)),
+              borderRadius: BorderRadius.all(Radius.elliptical(50.0, 100.0)),
               gradient: LinearGradient(
                 begin: FractionalOffset.centerRight,
                 end: FractionalOffset.bottomLeft,
@@ -95,7 +95,7 @@ class SheepDetailBody extends StatelessWidget {
           padding: const EdgeInsets.only(top: 8.0),
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(100.0)),
+              borderRadius: BorderRadius.all(Radius.elliptical(50.0, 100.0)),
               gradient: LinearGradient(
                 begin: FractionalOffset.centerRight,
                 end: FractionalOffset.bottomLeft,
