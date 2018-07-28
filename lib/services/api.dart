@@ -36,7 +36,6 @@ class SheepApi {
 
   Sheep _fromDocumentSnapshot(DocumentSnapshot snapshot) {
     final data = snapshot.data;
-    print(data);
 
     // TODO: Firestore field name changes:
     // TODO: id -> external_id, image_url -> avatar_url, adopted -> is_adopted.

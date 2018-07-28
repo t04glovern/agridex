@@ -4,7 +4,9 @@ import 'package:agridex/models/sheep.dart';
 import 'package:agridex/services/api.dart';
 import 'package:agridex/ui/sheep_details/details_page.dart';
 import 'package:agridex/utils/routes.dart';
+import 'package:agridex/ui/ble/screen_names.dart' as ScreenNames;
 import 'package:flutter/material.dart';
+import 'package:flutter_ble_lib/flutter_ble_lib.dart';
 
 class SheepList extends StatefulWidget {
   @override
@@ -75,13 +77,13 @@ class _SheepListState extends State<SheepList> {
 
   _navigateToSheepDetails(Sheep sheep, Object avatarTag) {
     Navigator.of(context).push(
-          new FadePageRoute(
-            builder: (c) {
-              return new SheepDetailsPage(sheep, avatarTag: avatarTag);
-            },
-            settings: new RouteSettings(),
-          ),
-        );
+      new FadePageRoute(
+        builder: (c) {
+          return new SheepDetailsPage(sheep, avatarTag: avatarTag);
+        },
+        settings: new RouteSettings(),
+      ),
+    );
   }
 
   Widget _getAppTitleWidget() {
@@ -137,23 +139,22 @@ class _SheepListState extends State<SheepList> {
           children: <Widget>[
             new FloatingActionButton(
               heroTag: null,
-              onPressed: () {},
-              child: Icon(Icons.camera, color: Colors.white),
-              tooltip: 'Scan Tag',
+              onPressed: () => _onBluetoothSetupClick(context),
+              child: Icon(Icons.bluetooth, color: Colors.white),
+              tooltip: 'Bluetooth Connect',
             ),
-//            new FloatingActionButton(
-//              heroTag: null,
-//              onPressed: () {},
-//              tooltip: _api != null
-//                  ? 'Signed-in: ' + _api.firebaseUser.displayName
-//                  : 'Not Signed-in',
-//              backgroundColor: Colors.green,
-//              child: new CircleAvatar(
-//                backgroundImage: _profileImage,
-//                radius: 50.0,
-//              ),
-//            )
+            new FloatingActionButton(
+              heroTag: null,
+              onPressed: (){},
+              child: Icon(Icons.scanner, color: Colors.white),
+              tooltip: 'Scan Tag',
+            )
           ],
         ));
+  }
+
+  _onBluetoothSetupClick(BuildContext context) {
+    FlutterBleLib.instance.createClient(null).then((data) =>
+        Navigator.of(context).pushNamed(ScreenNames.bleDevicesScreen));
   }
 }
