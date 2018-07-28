@@ -23,6 +23,11 @@ class SheepDetail extends StatelessWidget {
               ' / ' +
               (this.sheep.sex == 'M' ? '♂ Male' : '♀ Female')),
       buildField('Visual Num.', this.sheep.visualNum.toString()),
+      buildField('Visual Id.', this.sheep.visualId.toString()),
+      buildField('Conditions', this.sheep.conditions.toString()),
+      buildField('Weights', this.sheep.weights.toString()),
+      buildField('Fleece', this.sheep.fleece.toString()),
+      buildField('Pregnancies', this.sheep.pregnancies.toString()),
       Padding(
         padding: const EdgeInsets.fromLTRB(60.0, 20.0, 60.0, 20.0),
         child: RaisedButton(
