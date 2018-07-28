@@ -141,18 +141,18 @@ class _SheepListState extends State<SheepList> {
               child: Icon(Icons.camera, color: Colors.white),
               tooltip: 'Scan Tag',
             ),
-            new FloatingActionButton(
-              heroTag: null,
-              onPressed: () {},
-              tooltip: _api != null
-                  ? 'Signed-in: ' + _api.firebaseUser.displayName
-                  : 'Not Signed-in',
-              backgroundColor: Colors.green,
-              child: new CircleAvatar(
-                backgroundImage: _profileImage,
-                radius: 50.0,
-              ),
-            )
+//            new FloatingActionButton(
+//              heroTag: null,
+//              onPressed: () {},
+//              tooltip: _api != null
+//                  ? 'Signed-in: ' + _api.firebaseUser.displayName
+//                  : 'Not Signed-in',
+//              backgroundColor: Colors.green,
+//              child: new CircleAvatar(
+//                backgroundImage: _profileImage,
+//                radius: 50.0,
+//              ),
+//            )
           ],
         ));
   }
