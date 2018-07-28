@@ -44,10 +44,13 @@ class _SheepDetailsPageState extends State<SheepDetailsPage> {
                 avatarTag: widget.avatarTag,
               ),
               new Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(10.0),
                 child: new SheepDetailBody(widget.sheep),
               ),
-              new SheepShowcase(widget.sheep),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: new SheepDetail(widget.sheep),
+              ),
             ],
           ),
         ),
