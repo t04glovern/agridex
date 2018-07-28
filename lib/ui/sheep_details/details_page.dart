@@ -6,11 +6,11 @@ import 'package:agridex/models/sheep.dart';
 import 'package:meta/meta.dart';
 
 class SheepDetailsPage extends StatefulWidget {
-  final Sheep cat;
+  final Sheep sheep;
   final Object avatarTag;
 
   SheepDetailsPage(
-    this.cat, {
+    this.sheep, {
     @required this.avatarTag,
   });
 
@@ -26,8 +26,8 @@ class _SheepDetailsPageState extends State<SheepDetailsPage> {
         begin: FractionalOffset.centerRight,
         end: FractionalOffset.bottomLeft,
         colors: [
-          Colors.blue,
-          Colors.blue,
+          Colors.green,
+          Colors.green,
         ],
       ),
     );
@@ -40,14 +40,14 @@ class _SheepDetailsPageState extends State<SheepDetailsPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               new SheepDetailHeader(
-                widget.cat,
+                widget.sheep,
                 avatarTag: widget.avatarTag,
               ),
               new Padding(
                 padding: const EdgeInsets.all(24.0),
-                child: new SheepDetailBody(widget.cat),
+                child: new SheepDetailBody(widget.sheep),
               ),
-              new SheepShowcase(widget.cat),
+              new SheepShowcase(widget.sheep),
             ],
           ),
         ),

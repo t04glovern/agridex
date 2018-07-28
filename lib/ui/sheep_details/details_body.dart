@@ -26,17 +26,17 @@ class SheepDetailBody extends StatelessWidget {
     var theme = Theme.of(context);
     var textTheme = theme.textTheme;
 
-    var locationInfo = new Row(
+    var tagInfo = new Row(
       children: [
         new Icon(
-          Icons.place,
+          Icons.format_indent_decrease,
           color: Colors.white,
           size: 16.0,
         ),
         new Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: new Text(
-            sheep.sex,
+            "RFID Tag will go here",
             style: textTheme.subhead.copyWith(color: Colors.white),
           ),
         ),
@@ -46,32 +46,10 @@ class SheepDetailBody extends StatelessWidget {
     return new Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        new Text(
-          sheep.eid,
-          style: textTheme.headline.copyWith(color: Colors.white),
-        ),
         new Padding(
           padding: const EdgeInsets.only(top: 4.0),
-          child: locationInfo,
-        ),
-        new Padding(
-          padding: const EdgeInsets.only(top: 16.0),
-          child: new Text(
-            sheep.sex,
-            style:
-                textTheme.body1.copyWith(color: Colors.white70, fontSize: 16.0),
-          ),
-        ),
-        new Padding(
-          padding: const EdgeInsets.only(top: 16.0),
-          child: new Row(
-            children: [
-              _createCircleBadge(Icons.share, theme.accentColor),
-              _createCircleBadge(Icons.phone, Colors.white12),
-              _createCircleBadge(Icons.email, Colors.white12),
-            ],
-          ),
-        ),
+          child: tagInfo,
+        )
       ],
     );
   }

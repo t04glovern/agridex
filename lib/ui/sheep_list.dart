@@ -55,12 +55,13 @@ class _SheepListState extends State<SheepList> {
               leading: new Hero(
                 tag: index,
                 child: new CircleAvatar(
-                  backgroundImage: new NetworkImage('https://vignette.wikia.nocookie.net/shaunthesheep/images/e/eb/Shaun.png/revision/latest?cb=20160427172317'),
+                  backgroundImage: new NetworkImage(sheep.avatarUrl),
                 ),
               ),
               title: new Text(
                 "EID: " + sheep.eid,
-                style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
+                style: new TextStyle(
+                    fontWeight: FontWeight.bold, color: Colors.black54),
               ),
               subtitle: new Text("Birth Year: " + sheep.birth.toString()),
               isThreeLine: false,
@@ -74,13 +75,13 @@ class _SheepListState extends State<SheepList> {
 
   _navigateToSheepDetails(Sheep sheep, Object avatarTag) {
     Navigator.of(context).push(
-      new FadePageRoute(
-        builder: (c) {
-          return new SheepDetailsPage(sheep, avatarTag: avatarTag);
-        },
-        settings: new RouteSettings(),
-      ),
-    );
+          new FadePageRoute(
+            builder: (c) {
+              return new SheepDetailsPage(sheep, avatarTag: avatarTag);
+            },
+            settings: new RouteSettings(),
+          ),
+        );
   }
 
   Widget _getAppTitleWidget() {
@@ -97,18 +98,15 @@ class _SheepListState extends State<SheepList> {
   Widget _buildBody() {
     return new Container(
       margin: const EdgeInsets.fromLTRB(
-        8.0,  // A left margin of 8.0
-        56.0, // A top margin of 56.0
-        8.0,  // A right margin of 8.0
-        0.0   // A bottom margin of 0.0
-      ),
+          8.0, // A left margin of 8.0
+          56.0, // A top margin of 56.0
+          8.0, // A right margin of 8.0
+          0.0 // A bottom margin of 0.0
+          ),
       child: new Column(
         // A column widget can have several
         // widgets that are placed in a top down fashion
-        children: <Widget>[
-          _getAppTitleWidget(),
-          _getListViewWidget()
-        ],
+        children: <Widget>[_getAppTitleWidget(), _getListViewWidget()],
       ),
     );
   }
@@ -120,33 +118,42 @@ class _SheepListState extends State<SheepList> {
 
   Widget _getListViewWidget() {
     return new Flexible(
-      child: new RefreshIndicator(
-        onRefresh: refresh,
-        child: new ListView.builder(
-          physics: const AlwaysScrollableScrollPhysics(),
-          itemCount: _sheep.length,
-          itemBuilder: _buildSheepItem
-        )
-      )
-    );
+        child: new RefreshIndicator(
+            onRefresh: refresh,
+            child: new ListView.builder(
+                physics: const AlwaysScrollableScrollPhysics(),
+                itemCount: _sheep.length,
+                itemBuilder: _buildSheepItem)));
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.blue,
-      body: _buildBody(),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: () {
-          // Do something when FAB is pressed
-        },
-        tooltip: _api != null ? 'Signed-in: ' + _api.firebaseUser.displayName : 'Not Signed-in',
-        backgroundColor: Colors.blue,
-        child: new CircleAvatar(
-          backgroundImage: _profileImage,
-          radius: 50.0,
-        ),
-      ),
-    );
+        backgroundColor: Colors.green,
+        body: _buildBody(),
+        floatingActionButton: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            new FloatingActionButton(
+              heroTag: null,
+              onPressed: () {},
+              child: Icon(Icons.camera, color: Colors.white),
+              tooltip: 'Scan Tag',
+            ),
+            new FloatingActionButton(
+              heroTag: null,
+              onPressed: () {},
+              tooltip: _api != null
+                  ? 'Signed-in: ' + _api.firebaseUser.displayName
+                  : 'Not Signed-in',
+              backgroundColor: Colors.green,
+              child: new CircleAvatar(
+                backgroundImage: _profileImage,
+                radius: 50.0,
+              ),
+            )
+          ],
+        ));
   }
 }

@@ -12,7 +12,7 @@ class DetailsShowcase extends StatelessWidget {
 
     return new Center(
       child: new Text(
-        sheep.eid,
+        "EID: " + sheep.eid + "\nBirth: " + sheep.birth.toString() + "\nGender: " + sheep.sex,
         textAlign: TextAlign.center,
         style: textTheme.subhead.copyWith(color: Colors.white),
       ),

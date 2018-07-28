@@ -7,11 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 class SheepDetailHeader extends StatefulWidget {
-  final Sheep cat;
+  final Sheep sheep;
   final Object avatarTag;
 
   SheepDetailHeader(
-    this.cat, {
+    this.sheep, {
     @required this.avatarTag,
   });
 
@@ -58,14 +58,14 @@ class _SheepDetailHeaderState extends State<SheepDetailHeader> {
         height: 280.0,
         fit: BoxFit.cover,
       ),
-      color: const Color(0xBB42A5F5),
+      color: const Color(0x8888D897),
     );
 
     var avatar = new Hero(
       tag: widget.avatarTag,
       child: new CircleAvatar(
-        backgroundImage: new NetworkImage('https://vignette.wikia.nocookie.net/shaunthesheep/images/e/eb/Shaun.png/revision/latest?cb=20160427172317'),
-        radius: 75.0,
+        backgroundImage: new NetworkImage(widget.sheep.avatarUrl),
+        radius: 50.0,
       ),
     );
 
@@ -74,15 +74,14 @@ class _SheepDetailHeaderState extends State<SheepDetailHeader> {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          new Icon(
-            Icons.thumb_up,
-            color: Colors.white,
-            size: 16.0,
+          new Text(
+            "EID: ",
+            style: textTheme.subhead.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           new Padding(
             padding: const EdgeInsets.only(left: 8.0),
             child: new Text(
-              _likeCounter.toString(),
+              widget.sheep.eid,
               style: textTheme.subhead.copyWith(color: Colors.white),
             )
           )
@@ -102,24 +101,14 @@ class _SheepDetailHeaderState extends State<SheepDetailHeader> {
           new ClipRRect(
             borderRadius: new BorderRadius.circular(30.0),
             child: new MaterialButton(
-              minWidth: 140.0,
+              minWidth: 100.0,
               color: theme.accentColor,
               textColor: Colors.white,
               onPressed: () async {
                 //
               },
               //TODO Launch adoption information page
-              child: new Text('ADOPT ME'),
-            ),
-          ),
-          new ClipRRect(
-            borderRadius: new BorderRadius.circular(30.0),
-            child: new RaisedButton(
-              color: Colors.lightGreen,
-              disabledColor: Colors.grey,
-              textColor: Colors.white,
-              onPressed: _likeDisabled ? null : null,
-              child: new Text(_likeText),
+              child: new Text('Log Data'),
             ),
           ),
         ],
