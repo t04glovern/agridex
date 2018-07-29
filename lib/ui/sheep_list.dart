@@ -8,6 +8,39 @@ import 'package:agridex/ui/ble/screen_names.dart' as ScreenNames;
 import 'package:flutter/material.dart';
 import 'package:flutter_ble_lib/flutter_ble_lib.dart';
 
+class TagColor {
+  static final _postBreederColor =
+  TagColor(Colors.black, Color.fromARGB(255, 255, 140, 235));
+
+  static final _colors = [
+    TagColor(Colors.white, Colors.black),
+    TagColor(Colors.black, Colors.white),
+    TagColor(Colors.white, Colors.orange),
+    TagColor(Colors.white, Colors.lightGreen),
+    TagColor(Colors.white, Colors.purple),
+    TagColor(Colors.black, Colors.yellow),
+    TagColor(Colors.white, Colors.red),
+    TagColor(Colors.white, Colors.blue),
+  ];
+
+  Color foreground;
+  Color background;
+
+  TagColor(this.foreground, this.background);
+
+  TagColor.fromYear(int year) {
+    var color = TagColor._colors[year % TagColor._colors.length];
+
+    this.foreground = color.foreground;
+    this.background = color.background;
+  }
+
+  TagColor.fromPostBreeder() {
+    this.foreground = TagColor._postBreederColor.foreground;
+    this.background = TagColor._postBreederColor.background;
+  }
+}
+
 class SheepList extends StatefulWidget {
   @override
   _SheepListState createState() => new _SheepListState();
@@ -46,6 +79,10 @@ class _SheepListState extends State<SheepList> {
   Widget _buildSheepItem(BuildContext context, int index) {
     Sheep sheep = _sheep[index];
 
+    var tagColor = sheep.postBreeder
+        ? TagColor.fromPostBreeder()
+        : TagColor.fromYear(sheep.birth);
+
     return new Container(
       margin: const EdgeInsets.only(top: 5.0),
       child: new Card(
@@ -56,11 +93,10 @@ class _SheepListState extends State<SheepList> {
               onTap: () => _navigateToSheepDetails(sheep, index),
               leading: new Hero(
                 tag: index,
-                child: new Text('#' + (index + 1).toString(),
-                    style: Theme.of(this.context)
-                        .textTheme
-                        .title
-                        .copyWith(fontSize: 30.0)),
+                child: new CircleAvatar(
+                  backgroundColor: tagColor.background,
+                  child: new Text(sheep.origin, style: new TextStyle(color: tagColor.foreground)),
+                ),
               ),
               title: new Text(
                 "EID: " + sheep.eid,
@@ -178,6 +214,7 @@ class _SheepListState extends State<SheepList> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             RaisedButton(
+              color: Colors.white,
               padding: EdgeInsets.all(5.0),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -188,6 +225,7 @@ class _SheepListState extends State<SheepList> {
               },
             ),
             RaisedButton(
+              color: Colors.white,
               padding: EdgeInsets.all(5.0),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -198,6 +236,7 @@ class _SheepListState extends State<SheepList> {
               },
             ),
             RaisedButton(
+              color: Colors.white,
               padding: EdgeInsets.all(5.0),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -208,6 +247,7 @@ class _SheepListState extends State<SheepList> {
               },
             ),
             RaisedButton(
+              color: Colors.white,
               padding: EdgeInsets.all(5.0),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
