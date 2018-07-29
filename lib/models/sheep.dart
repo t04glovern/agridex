@@ -11,10 +11,10 @@ class Sheep {
   final bool postBreeder;
   final int visualNum;
   final int visualId;
-  final List<Object> conditions;
-  final List<Object> fleece;
-  final List<Object> pregnancies;
-  final List<Object> weights;
+  final List<dynamic> conditions;
+  final List<dynamic> fleece;
+  final List<dynamic> pregnancies;
+  final List<dynamic> weights;
 
   Sheep({
     @required this.documentId,
