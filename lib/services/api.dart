@@ -37,7 +37,6 @@ class SheepApi {
 
   Sheep _fromDocumentSnapshot(DocumentSnapshot snapshot) {
     final data = snapshot.data;
-    print(data);
 
     // TODO: Firestore field name changes:
     // TODO: id -> external_id, image_url -> avatar_url, adopted -> is_adopted.
@@ -50,6 +49,8 @@ class SheepApi {
         birth: data['birth'],
         postBreeder: data['postBreeder'],
         visualNum: data['visualNum'],
+        visualId: data['visualId'],
+        conditions: new List<Object>.from(data['conditions']),
         fleece: new List<Object>.from(data['fleece']),
         pregnancies: new List<Object>.from(data['pregnancies']),
         weights: new List<Object>.from(data['weights']));

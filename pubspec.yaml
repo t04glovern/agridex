@@ -10,6 +10,11 @@ dependencies:
   google_sign_in: 3.0.0
   cloud_firestore: 0.3.1
   font_awesome_flutter: 6.0.0
+  uuid: 0.5.3
+
+  flutter_ble_lib:
+    git:
+      url: https://github.com/t04glovern/FlutterBleLib.git
 
 dev_dependencies:
   flutter_test:

@@ -55,10 +55,10 @@ class _SheepDetailHeaderState extends State<SheepDetailHeader> {
       new Image.asset(
         BACKGROUND_IMAGE,
         width: screenWidth,
-        height: 280.0,
+        height: 180.0,
         fit: BoxFit.cover,
       ),
-      color: const Color(0x8888D897),
+      color: const Color(0x5588D897),
     );
 
     var avatar = new Hero(
@@ -66,52 +66,6 @@ class _SheepDetailHeaderState extends State<SheepDetailHeader> {
       child: new CircleAvatar(
         backgroundImage: new NetworkImage(widget.sheep.avatarUrl),
         radius: 50.0,
-      ),
-    );
-
-    var likeInfo = new Padding(
-      padding: const EdgeInsets.only(top: 16.0),
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          new Text(
-            "EID: ",
-            style: textTheme.subhead.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-          new Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: new Text(
-              widget.sheep.eid,
-              style: textTheme.subhead.copyWith(color: Colors.white),
-            )
-          )
-        ],
-      ),
-    );
-
-    var actionButtons = new Padding(
-      padding: const EdgeInsets.only(
-        top: 16.0,
-        left: 16.0,
-        right: 16.0,
-      ),
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          new ClipRRect(
-            borderRadius: new BorderRadius.circular(30.0),
-            child: new MaterialButton(
-              minWidth: 100.0,
-              color: theme.accentColor,
-              textColor: Colors.white,
-              onPressed: () async {
-                //
-              },
-              //TODO Launch adoption information page
-              child: new Text('Log Data'),
-            ),
-          ),
-        ],
       ),
     );
 
@@ -123,9 +77,7 @@ class _SheepDetailHeaderState extends State<SheepDetailHeader> {
           heightFactor: 1.4,
           child: new Column(
             children: [
-              avatar,
-              likeInfo,
-              actionButtons,
+              avatar
             ],
           ),
         ),

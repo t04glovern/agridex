@@ -10,6 +10,8 @@ class Sheep {
   final int birth;
   final bool postBreeder;
   final int visualNum;
+  final int visualId;
+  final List<Object> conditions;
   final List<Object> fleece;
   final List<Object> pregnancies;
   final List<Object> weights;
@@ -25,6 +27,8 @@ class Sheep {
     @required this.birth,
     @required this.postBreeder,
     @required this.visualNum,
+    @required this.visualId,
+    @required this.conditions,
     @required this.fleece,
     @required this.pregnancies,
     @required this.weights,

@@ -1,0 +1,334 @@
+{
+    "sheep" : {
+        "951000301588794" : {
+            "birth" : 2014,
+            "eid" : "951 000301588794",
+            "origin": "K1T",
+            "postBreeder": true,
+            "sex": "F",
+            "tag": "6331",
+            "visualNum": 14001,
+            "visualId": 140033,
+            "weights": [{
+                "weight": 35.5,
+                "date": "2015-01-28T00:00:00.000Z"
+            }, {
+                "weight": 49,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 59,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-06T00:00:00.000Z",
+                "micron": 18.9,
+                "gfw": 4.1
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 1
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.2
+            }]
+        },
+        "951000301588724" : {
+            "birth" : 2016,
+            "eid" : "951 000301588724",
+            "origin": "K1T",
+            "postBreeder": false,
+            "sex": "F",
+            "tag": "6332",
+            "visualNum": 14002,
+            "visualId": 140104,
+            "weights": [{
+                "weight": 36,
+                "date": "2015-01-28T00:00:00.000Z"
+            }, {
+                "weight": 56.5,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 75.5,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-06T00:00:00.000Z",
+                "micron": 21.1,
+                "gfw": 4.1
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 2
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.5
+            }]
+        },
+        "951000301612242" : {
+            "birth" : 2015,
+            "eid" : "951 000301612242",
+            "origin": "K1T",
+            "postBreeder": false,
+            "sex": "F",
+            "tag": "6333",
+            "visualNum": 14003,
+            "visualId": 140111,
+            "weights": [{
+                "weight": 37,
+                "date": "2015-01-29T00:00:00.000Z"
+            }, {
+                "weight": 45.5,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 57.5,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "micron": 19.5,
+                "gfw": 0.0
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 1
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.5
+            }]
+        },
+        "951000301589209" : {
+            "birth" : 2012,
+            "eid" : "951 000301589209",
+            "origin": "K1T",
+            "postBreeder": true,
+            "sex": "F",
+            "tag": "6334",
+            "visualNum": 14004,
+            "visualId": 140124,
+            "weights": [{
+                "weight": 34.5,
+                "date": "2015-01-28T00:00:00.000Z"
+            }, {
+                "weight": 43.5,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 62.5,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-06T00:00:00.000Z",
+                "micron": 19.5,
+                "gfw": 4.5
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 1
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.2
+            }]
+        },
+        "951000301588556" : {
+            "birth" : 2013,
+            "eid" : "951 000301588556",
+            "origin": "K1T",
+            "postBreeder": false,
+            "sex": "F",
+            "tag": "6335",
+            "visualNum": 14005,
+            "visualId": 140128,
+            "weights": [{
+                "weight": 31.5,
+                "date": "2015-01-28T00:00:00.000Z"
+            }, {
+                "weight": 54,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 64.5,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-06T00:00:00.000Z",
+                "micron": 18.9,
+                "gfw": 4.0
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 1
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.5
+            }]
+        },
+        "951000301617643" : {
+            "birth" : 2014,
+            "eid" : "951 000301617643",
+            "origin": "K1T",
+            "postBreeder": false,
+            "sex": "F",
+            "tag": "6336",
+            "visualNum": 14006,
+            "visualId": 140135,
+            "weights": [{
+                "weight": 20.5,
+                "date": "2015-01-29T00:00:00.000Z"
+            }, {
+                "weight": 40,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 47.5,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-06T00:00:00.000Z",
+                "micron": 18.6,
+                "gfw": 3.3
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 0
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.2
+            }]
+        },
+        "951000301588976" : {
+            "birth" : 2010,
+            "eid" : "951 000301588976",
+            "origin": "K1T",
+            "postBreeder": false,
+            "sex": "F",
+            "tag": "6337",
+            "visualNum": 14007,
+            "visualId": 140137,
+            "weights": [{
+                "weight": 37,
+                "date": "2015-01-28T00:00:00.000Z"
+            }, {
+                "weight": 52,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 65.5,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-06T00:00:00.000Z",
+                "micron": 18.6,
+                "gfw": 3.8
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 1
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.2
+            }]
+        },
+        "951000301588823" : {
+            "birth" : 2014,
+            "eid" : "951 000301588823",
+            "origin": "K1T",
+            "postBreeder": false,
+            "sex": "F",
+            "tag": "6338",
+            "visualNum": 14008,
+            "visualId": 140140,
+            "weights": [{
+                "weight": 33.5,
+                "date": "2015-01-28T00:00:00.000Z"
+            }, {
+                "weight": 53,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 65.5,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-06T00:00:00.000Z",
+                "micron": 20.0,
+                "gfw": 4.3
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 1
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.2
+            }]
+        },
+        "951000301617958" : {
+            "birth" : 2011,
+            "eid" : "951 000301617958",
+            "origin": "K1T",
+            "postBreeder": true,
+            "sex": "F",
+            "tag": "6339",
+            "visualNum": 14009,
+            "visualId": 140141,
+            "weights": [{
+                "weight": 37,
+                "date": "2015-01-29T00:00:00.000Z"
+            }, {
+                "weight": 50.5,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 61.5,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "micron": 19.1,
+                "gfw": 0.0
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 1
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.5
+            }]
+        },
+        "951000301611397" : {
+            "birth" : 2016,
+            "eid" : "951 000301611397",
+            "origin": "K1T",
+            "postBreeder": false,
+            "sex": "F",
+            "tag": "6340",
+            "visualNum": 14010,
+            "visualId": 140144,
+            "weights": [{
+                "weight": 35.5,
+                "date": "2015-01-28T00:00:00.000Z"
+            }, {
+                "weight": 48,
+                "date": "2015-05-28T00:00:00.000Z"
+            }, {
+                "weight": 61,
+                "date": "2015-10-01T00:00:00.000Z"
+            }],
+            "fleece": [{
+                "date": "2015-10-06T00:00:00.000Z",
+                "micron": 17.8,
+                "gfw": 3.7
+            }],
+            "pregnancies": [{
+                "dateGroup": "2016-02-01T00:00:00.000Z",
+                "num": 1
+            }],
+            "conditions": [{
+                "date": "2015-10-01T00:00:00.000Z",
+                "score": 3.2
+            }]
+        }
+    }
+}
