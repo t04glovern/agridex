@@ -85,7 +85,7 @@ class SheepDetail extends StatelessWidget {
     for (var condition in this.sheep.weights) {
       text += this.formatDate(DateTime.parse(condition['date']));
       text += '    |    ';
-      text += condition['weight'].toString();
+      text += condition['weight'].toStringAsFixed(1).padLeft(2) + ' kg';
       text += '\n';
     }
 
