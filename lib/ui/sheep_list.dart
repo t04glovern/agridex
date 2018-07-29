@@ -56,9 +56,11 @@ class _SheepListState extends State<SheepList> {
               onTap: () => _navigateToSheepDetails(sheep, index),
               leading: new Hero(
                 tag: index,
-                child: new CircleAvatar(
-                  backgroundImage: new NetworkImage(sheep.avatarUrl),
-                ),
+                child: new Text('#' + (index + 1).toString(),
+                    style: Theme.of(this.context)
+                        .textTheme
+                        .title
+                        .copyWith(fontSize: 30.0)),
               ),
               title: new Text(
                 "EID: " + sheep.eid,
@@ -88,11 +90,135 @@ class _SheepListState extends State<SheepList> {
 
   Widget _getAppTitleWidget() {
     return new Text(
-      'Sheep',
+      'AgDex',
       style: new TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.bold,
         fontSize: 32.0,
+      ),
+    );
+  }
+
+  void _sortByCondition() {
+    var sheep = this._sheep;
+    sheep.sort((lhs, rhs) {
+      var lhsSum = 0.0;
+      var rhsSum = 0.0;
+
+      for (var cond in lhs.conditions) lhsSum += cond['score'];
+      for (var cond in rhs.conditions) rhsSum += cond['score'];
+
+      return (rhsSum - lhsSum).round();
+    });
+
+    this.setState(() {
+      this._sheep = new List.from(sheep);
+    });
+  }
+
+  void _sortByWeight() {
+    var sheep = this._sheep;
+    sheep.sort((lhs, rhs) {
+      var lhsSum = 0.0;
+      var rhsSum = 0.0;
+
+      for (var cond in lhs.weights) lhsSum += cond['weight'];
+      for (var cond in rhs.weights) rhsSum += cond['weight'];
+
+      return (rhsSum - lhsSum).round();
+    });
+
+    this.setState(() {
+      this._sheep = new List.from(sheep);
+    });
+  }
+
+  void _sortByGfw() {
+    var sheep = this._sheep;
+    sheep.sort((lhs, rhs) {
+      var lhsSum = 0.0;
+      var rhsSum = 0.0;
+
+      for (var cond in lhs.fleece) lhsSum += cond['gfw'];
+      for (var cond in rhs.fleece) rhsSum += cond['gfw'];
+
+      return (rhsSum - lhsSum).round();
+    });
+
+    this.setState(() {
+      this._sheep = new List.from(sheep);
+    });
+  }
+
+  void _sortByMicron() {
+    var sheep = this._sheep;
+    sheep.sort((lhs, rhs) {
+      var lhsSum = 0.0;
+      var rhsSum = 0.0;
+
+      for (var cond in lhs.fleece) lhsSum += cond['micron'];
+      for (var cond in rhs.fleece) rhsSum += cond['micron'];
+
+      return (rhsSum - lhsSum).round();
+    });
+
+    this.setState(() {
+      this._sheep = new List.from(sheep);
+    });
+  }
+
+  Widget _buildSortButtonRow() {
+    var textStyle =
+        Theme.of(this.context).textTheme.title.copyWith(fontSize: 15.0);
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            RaisedButton(
+              padding: EdgeInsets.all(5.0),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text('Condition', style: textStyle),
+              ),
+              onPressed: () {
+                this._sortByCondition();
+              },
+            ),
+            RaisedButton(
+              padding: EdgeInsets.all(5.0),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text('Weight', style: textStyle),
+              ),
+              onPressed: () {
+                this._sortByWeight();
+              },
+            ),
+            RaisedButton(
+              padding: EdgeInsets.all(5.0),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text('GFW', style: textStyle),
+              ),
+              onPressed: () {
+                this._sortByGfw();
+              },
+            ),
+            RaisedButton(
+              padding: EdgeInsets.all(5.0),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text('Micron', style: textStyle),
+              ),
+              onPressed: () {
+                this._sortByMicron();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -108,7 +234,11 @@ class _SheepListState extends State<SheepList> {
       child: new Column(
         // A column widget can have several
         // widgets that are placed in a top down fashion
-        children: <Widget>[_getAppTitleWidget(), _getListViewWidget()],
+        children: <Widget>[
+          _getAppTitleWidget(),
+          _buildSortButtonRow(),
+          _getListViewWidget(),
+        ],
       ),
     );
   }
