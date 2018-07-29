@@ -8,6 +8,39 @@ import 'package:agridex/ui/ble/screen_names.dart' as ScreenNames;
 import 'package:flutter/material.dart';
 import 'package:flutter_ble_lib/flutter_ble_lib.dart';
 
+class TagColor {
+  static final _postBreederColor =
+  TagColor(Colors.black, Color.fromARGB(255, 255, 140, 235));
+
+  static final _colors = [
+    TagColor(Colors.white, Colors.black),
+    TagColor(Colors.black, Colors.white),
+    TagColor(Colors.white, Colors.orange),
+    TagColor(Colors.white, Colors.lightGreen),
+    TagColor(Colors.white, Colors.purple),
+    TagColor(Colors.black, Colors.yellow),
+    TagColor(Colors.white, Colors.red),
+    TagColor(Colors.white, Colors.blue),
+  ];
+
+  Color foreground;
+  Color background;
+
+  TagColor(this.foreground, this.background);
+
+  TagColor.fromYear(int year) {
+    var color = TagColor._colors[year % TagColor._colors.length];
+
+    this.foreground = color.foreground;
+    this.background = color.background;
+  }
+
+  TagColor.fromPostBreeder() {
+    this.foreground = TagColor._postBreederColor.foreground;
+    this.background = TagColor._postBreederColor.background;
+  }
+}
+
 class SheepList extends StatefulWidget {
   @override
   _SheepListState createState() => new _SheepListState();
@@ -46,6 +79,10 @@ class _SheepListState extends State<SheepList> {
   Widget _buildSheepItem(BuildContext context, int index) {
     Sheep sheep = _sheep[index];
 
+    var tagColor = sheep.postBreeder
+        ? TagColor.fromPostBreeder()
+        : TagColor.fromYear(sheep.birth);
+
     return new Container(
       margin: const EdgeInsets.only(top: 5.0),
       child: new Card(
@@ -57,7 +94,8 @@ class _SheepListState extends State<SheepList> {
               leading: new Hero(
                 tag: index,
                 child: new CircleAvatar(
-                  backgroundImage: new NetworkImage(sheep.avatarUrl),
+                  backgroundColor: tagColor.background,
+                  child: new Text(sheep.origin, style: new TextStyle(color: tagColor.foreground)),
                 ),
               ),
               title: new Text(
@@ -88,7 +126,7 @@ class _SheepListState extends State<SheepList> {
 
   Widget _getAppTitleWidget() {
     return new Text(
-      'Sheep',
+      'AgDex Sheep',
       style: new TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.bold,

@@ -32,10 +32,6 @@ class ScanResultItem extends StatelessWidget {
         .of(context)
         .textTheme
         .title;
-    final TextStyle body1Style = Theme
-        .of(context)
-        .textTheme
-        .body1;
     final TextStyle buttonStyle = Theme
         .of(context)
         .textTheme
@@ -49,13 +45,12 @@ class ScanResultItem extends StatelessWidget {
           children: <Widget>[
             new Container(
               child: new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   new Container(
                     child: new Column(
                       children: <Widget>[
-                        new Text(_deviceName(), style: titleStyle),
-                        new Text(_deviceMac(), style: body1Style),
+                        new Text(_deviceName(), style: titleStyle)
                       ],
                     )
                   ),
@@ -74,8 +69,6 @@ class ScanResultItem extends StatelessWidget {
   }
 
   _deviceName() => "${_scanResult.bleDevice.name}";
-
-  _deviceMac() => "MAC : ${_scanResult.bleDevice.id}";
 
 }
 
@@ -215,7 +208,7 @@ class BleDevicesState extends State<BleDevicesScreen> {
   _onStartScan() {
     //TODO pass this list as arg to scan only filtered devices
     List<String> uuids = new List();
-    uuids.add("917649A0-D98E-11E5-9EEC-0002A5D5C51B");
+    uuids.add("917649a2-d98e-11e5-9eec-0002a5d5c51b");
     _scanDevicesSub = FlutterBleLib.instance
         .startDeviceScan(1, 1, uuids)
         .listen(
