@@ -33,7 +33,7 @@ class SheepDetail extends StatelessWidget {
         child: RaisedButton(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Text('More Details', style: this.fieldTextStyle),
+            child: Text('View Pedigree', style: this.fieldTextStyle),
           ),
           onPressed: () {},
         ),
