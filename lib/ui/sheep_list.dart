@@ -246,17 +246,17 @@ class _SheepListState extends State<SheepList> {
                 this._sortByGfw();
               },
             ),
-            RaisedButton(
-              color: Colors.white,
-              padding: EdgeInsets.all(5.0),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text('Micron', style: textStyle),
-              ),
-              onPressed: () {
-                this._sortByMicron();
-              },
-            ),
+//            RaisedButton(
+//              color: Colors.white,
+//              padding: EdgeInsets.all(5.0),
+//              child: Padding(
+//                padding: const EdgeInsets.all(10.0),
+//                child: Text('Micron', style: textStyle),
+//              ),
+//              onPressed: () {
+//                this._sortByMicron();
+//              },
+//            ),
           ],
         ),
       ),
